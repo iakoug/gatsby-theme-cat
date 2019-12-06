@@ -10,11 +10,6 @@ interface Props {
 const Footer = (props: Props): React.ReactElement => {
   return (
     <S.Wrapper>
-      <S.Copyright>
-        ©{new Date().getUTCFullYear()}
-        &nbsp; Powered by 🎉
-        {props.siteMeta.siteMetadata.author}
-      </S.Copyright>
       <S.SocialList>
         {props.siteMeta.siteMetadata.socials.map(
           (item): React.ReactElement => (
@@ -26,6 +21,12 @@ const Footer = (props: Props): React.ReactElement => {
           )
         )}
       </S.SocialList>
+
+      <S.Copyright>
+        ©{new Date().getUTCFullYear()}
+        &nbsp;Powered by 🎉&nbsp;
+        {props.siteMeta.siteMetadata.author}
+      </S.Copyright>
     </S.Wrapper>
   )
 }

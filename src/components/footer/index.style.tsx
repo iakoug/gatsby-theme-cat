@@ -1,9 +1,7 @@
 import Styled from 'styled-components'
 
 export const Wrapper = Styled.footer`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -11,14 +9,18 @@ export const Wrapper = Styled.footer`
 `
 
 export const Copyright = Styled.span`
-    display: flex;
-    align-items: center;
+    display: block;
     font-weight: 500;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 `
 
 export const SocialList = Styled.ul`
-    margin-right: -16px;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export const SocialItem = Styled.li`

@@ -15,7 +15,7 @@ export const Wrapper = Styled.header`
 export const LogoSection = Styled(InnerLink)``
 
 export const LogoIcon = Styled(Icon).attrs({
-  type: 'heart-2'
+  type: 'cup'
 })`
     padding-right: 8px;
     font-size: 24px !important;
