@@ -12,7 +12,6 @@ export const Wrapper = Styled.header`
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    top: 40px;
 
     @media screen and (max-width: 880px) {
         width: 100%;
