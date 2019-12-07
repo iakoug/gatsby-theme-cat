@@ -24,7 +24,6 @@ const mdxPlugins = [
 module.exports = ({
   postPath = 'content/posts',
   mdxExtensions = ['.mdx', '.md'],
-  ga = '',
   htmlLang = 'en'
 }) => ({
   plugins: [
@@ -53,12 +52,6 @@ module.exports = ({
         plugins: mdxPlugins,
         remarkPlugins: mdPlugins,
         gatsbyRemarkPlugins: mdxPlugins
-      }
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: ga
       }
     },
     {
