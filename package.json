@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-cat",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "description": "A gatsby theme focus on content expression",
   "main": "index.js",
   "author": "rollawaypoint@gmail.com",
@@ -59,12 +59,7 @@
     "gatsby",
     "gatsby-plugin",
     "gatsby-theme",
-    "gatsby-theme-wink",
-    "blog",
-    "medium",
-    "articles",
-    "react",
-    "static web"
+    "react"
   ],
   "publishConfig": {
     "access": "public",

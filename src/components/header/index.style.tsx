@@ -2,14 +2,31 @@ import Styled from 'styled-components'
 import { InnerLink } from '../link'
 import { Icon } from '../Icon'
 
+export const HeaderContainer = Styled.div`
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
 export const Wrapper = Styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 48px 0;
+    width: 100vw;
+    padding: 5% 10%;
+    position: fixed;
+    z-index: 9999;
+    background: #fff;
+    top: 30px;
+    left: 0;
+    max-height: 100px;
+    box-sizing: border-box;
+    max-width: 100vw;
+    padding: 0 10%;
+    min-height: 10%;
 `
 
 export const LogoSection = Styled(InnerLink)``
