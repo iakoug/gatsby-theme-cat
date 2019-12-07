@@ -1,18 +1,18 @@
-import Styled from 'styled-components';
-import { InnerLink } from "../link";
-import Image from 'gatsby-image';
+import Styled from 'styled-components'
+import { InnerLink } from '../link'
+import Image from 'gatsby-image'
 
 export const Main = Styled.div`
     padding-top: 16px;
     hyphens: auto;
     hyphens: auto;
-`;
+`
 
 export const Title = Styled.h2`
     display: inline;
     font-size: 24px;
     font-weight: 700;
-`;
+`
 
 export const SubTitle = Styled.h4`
     display: inline;
@@ -22,13 +22,13 @@ export const SubTitle = Styled.h4`
     &:before {
         content: ' ';
     }
-`;
+`
 
 export const PostTime = Styled.time`
     display: block;
     font-weight: 700;
     text-transform: uppercase;
-`;
+`
 
 export const Cover = Styled(Image)`
     height: 240px;
@@ -39,8 +39,7 @@ export const Cover = Styled(Image)`
         transform: translateY(-1px);
         box-shadow: 0 48px 80px -24px rgba(0, 0, 0, 0.25), 0 32px 56px -32px rgba(0, 0, 0, 0.35);
     }
-`;
-
+`
 
 export const Wrapper = Styled(InnerLink)`
     display: block;
@@ -80,7 +79,4 @@ export const Wrapper = Styled(InnerLink)`
             font-size: 18px;
         }
     }
-`;
-
-
-
+`

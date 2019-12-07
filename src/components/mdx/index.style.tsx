@@ -1,4 +1,4 @@
-import Styled from "styled-components";
+import Styled from 'styled-components'
 
 export const Wrapper = Styled.div`
     width: 100%;
@@ -18,7 +18,7 @@ export const Wrapper = Styled.div`
         font-weight: 400;
         font-family: "Source Sans Pro";
     }
-`;
+`
 
 export const Code = Styled.code`
     margin: 0 4px;
@@ -26,7 +26,7 @@ export const Code = Styled.code`
     border-radius: 4px;
     font-size: 14px;
     background: rgb(239, 243, 245);
-`;
+`
 
 export const Pre = Styled.pre`
     position: relative;
@@ -145,8 +145,7 @@ export const Pre = Styled.pre`
     .token.entity {
         cursor: help;
     }
-`;
-
+`
 
 export const P = Styled.p`
     margin: 16px 0;
@@ -155,31 +154,31 @@ export const P = Styled.p`
     font-weight: 400;
     word-break: break-word;
     hyphens: auto;
-`;
+`
 
 export const H1 = Styled.h1`
     font-size: 32px;
-`;
+`
 
 export const H2 = Styled.h2`
     font-size: 28px;
-`;
+`
 
 export const H3 = Styled.h3`
     font-size: 24px;
-`;
+`
 
 export const H4 = Styled.h4`
     font-size: 20px;
-`;
+`
 
 export const H5 = Styled.h5`
     font-size: 16px;
-`;
+`
 
 export const H6 = Styled.h6`
     font-size: 12px;
-`;
+`
 
 export const Bloackquote = Styled.div`
     margin: 16px 0;
@@ -190,18 +189,18 @@ export const Bloackquote = Styled.div`
     P {
         margin: 0;
     }
-`;
+`
 
 export const Ul = Styled.ul`
     margin: 8px 0 8px 32px;
-`;
+`
 
-export const Ol = Styled.ol``;
+export const Ol = Styled.ol``
 
 export const Li = Styled.li`
     font-size: 16px;
     font-weight: 400;
-`;
+`
 
 export const Table = Styled.table`
     width: 100%;
@@ -209,13 +208,13 @@ export const Table = Styled.table`
     border-radius: 4px;
     border-spacing: 0px;
     margin: 16px 0px;
-`;
+`
 
 export const Tr = Styled.tr`
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
-`;
+`
 
 export const Th = Styled.th`
     text-align: left;
@@ -223,7 +222,7 @@ export const Th = Styled.th`
     font-weight: 600;
     text-transform: uppercase;
     padding: 8px 16px;
-`;
+`
 
 export const Td = Styled.td`
     text-align: left;
@@ -231,21 +230,21 @@ export const Td = Styled.td`
     border-top: 1px solid rgb(204, 217, 223);
     font-weight: 400;
     font-family: "Source Sans Pro";
-`;
+`
 
 export const Em = Styled.em`
     padding: 2px 4px;
     font-style: normal;
     background: rgba(196,240,255,.5);
-`;
+`
 
 export const Strong = Styled.strong`
     font-weight: bold;
-`;
+`
 
 export const Delete = Styled.del`
     color: rgba(0, 0, 0, 0.45);
-`;
+`
 
 export const Hr = Styled.hr`
     position: relative;
@@ -271,5 +270,4 @@ export const Hr = Styled.hr`
         top: -1px;
         right: -4px;
     }
-`;
-
+`
