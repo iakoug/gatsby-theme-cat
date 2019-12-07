@@ -20,7 +20,7 @@ export const Wrapper = Styled.header`
     position: fixed;
     z-index: 9999;
     background: #fff;
-    top: 30px;
+    top: 0;
     left: 0;
     max-height: 100px;
     box-sizing: border-box;
