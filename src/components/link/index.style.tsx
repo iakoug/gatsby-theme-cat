@@ -6,11 +6,6 @@ export const OuterLink = Styled.a.attrs({
   rel: 'noopener noreferrer'
 })`
     color: rgb(15, 122, 216);
-
-    @media screen and (min-width: 881px) {
-        position: relative;
-        right: 16px;
-    }
 `
 
 export const InnerLink = Styled(Link)`

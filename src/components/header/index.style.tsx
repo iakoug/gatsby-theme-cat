@@ -46,7 +46,6 @@ export const LogoTitle = Styled.h1`
 export const SearchIcon = Styled(Icon).attrs({
   type: 'search'
 })`
-    margin-right: -16px;
     padding: 0 16px;
     color: #3C3F45;
     font-size: 18px;
