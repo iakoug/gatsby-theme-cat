@@ -1,10 +1,10 @@
-import Styled from "styled-components";
+import Styled from 'styled-components'
 
 export const Wrapper = Styled.section`
     width: 80%;
     max-width: 1200px;
     margin: 48px auto;
-`;
+`
 
 export const List = Styled.div`
     display: flex;
@@ -13,4 +13,4 @@ export const List = Styled.div`
     justify-content: flex-start;
     align-items: stretch;
     margin: 0 -24px;
-`;
+`

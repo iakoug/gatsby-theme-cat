@@ -24,7 +24,6 @@ const mdxPlugins = [
 module.exports = ({
   postPath = 'content/posts',
   mdxExtensions = ['.mdx', '.md'],
-  ga = '',
   htmlLang = 'en'
 }) => ({
   plugins: [
@@ -56,12 +55,6 @@ module.exports = ({
       }
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: ga
-      }
-    },
-    {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
         lang: htmlLang
@@ -69,7 +62,7 @@ module.exports = ({
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-remove-trailing-slashes`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`
+    `gatsby-plugin-sitemap`
+    // `gatsby-plugin-offline`
   ]
 })

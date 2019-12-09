@@ -1,10 +1,8 @@
-import React from 'react';
-import * as S from "./index.style";
+import React from 'react'
+import * as S from './index.style'
 
 const Logo = (): React.ReactElement => {
-    return (
-        <S.LogoIcon />
-    );
-};
+  return <S.LogoIcon />
+}
 
-export default Logo;
+export default Logo
