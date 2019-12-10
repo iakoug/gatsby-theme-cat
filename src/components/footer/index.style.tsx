@@ -1,4 +1,14 @@
 import Styled from 'styled-components'
+import { LightInnerLink } from '../link'
+
+export const SeekAllLink = Styled(LightInnerLink)``
+
+export const SeekAllWrapper = Styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+`
 
 export const Wrapper = Styled.footer`
     display: block;

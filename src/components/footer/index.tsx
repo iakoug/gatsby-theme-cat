@@ -3,6 +3,8 @@ import { Icon } from '../Icon'
 import { OuterLink } from '../link'
 import * as S from './index.style'
 
+const allArticlesPath = '/posts'
+
 interface Props {
   siteMeta: Wink.Site
 }
@@ -27,6 +29,11 @@ const Footer = (props: Props): React.ReactElement => {
         &nbsp;Powered by 🎉&nbsp;
         {props.siteMeta.siteMetadata.author}
       </S.Copyright>
+      <S.SeekAllWrapper>
+        <S.SeekAllLink to={allArticlesPath}>
+          Seek all articles. 😝
+        </S.SeekAllLink>
+      </S.SeekAllWrapper>
     </S.Wrapper>
   )
 }
