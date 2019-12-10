@@ -3,6 +3,16 @@ declare module 'gatsby-plugin-mdx'
 declare module 'react-medium-image-zoom'
 
 declare namespace Wink {
+  export interface Posts {
+    site: Site
+    allSitePage: {
+      edges: {
+        node: {
+          id: string
+        }
+      }[]
+    }
+  }
   export interface PostData {
     site: Site
     node: NodeDetail
