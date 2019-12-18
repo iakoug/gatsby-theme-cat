@@ -1,14 +1,17 @@
 import React from 'react'
-// import Styled from 'styled-components';
-// import Layout from '../components/layout';
+import Styled from 'styled-components'
 
-// const Flex = Styled.div`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 400px;
-// `;
+const $404 = Styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background: url(https://i.loli.net/2019/12/18/i7XljnS8DMukPK9.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+`
 
-const NotFoundPage = (): React.ReactElement => <p>404</p>
-
-export default NotFoundPage
+export default (): React.ReactElement => <$404 />
