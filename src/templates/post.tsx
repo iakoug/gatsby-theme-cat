@@ -24,7 +24,7 @@ export default function Post(props: Props): React.ReactElement {
       <>
         <PostHead post={data.node} />
         <MDX post={data.node} />
-        <PostList posts={siblingPosts} />
+        <PostList nav={true} posts={siblingPosts} />
       </>
     </Layout>
   )

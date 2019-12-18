@@ -4,12 +4,20 @@ import * as S from './index.style'
 
 interface Props {
   posts: Wink.NodeBase[]
+  nav: boolean
 }
 
 export const PostList = (props: Props): React.ReactElement => {
-  const postNodeList = props.posts.map(
+  const { nav, posts } = props
+  const postNodeList = posts.map(
     (post: Wink.NodeBase, index: number): React.ReactElement => {
-      return <PostCard key={index} post={post} />
+      const options = {
+        nav,
+        isPreNav: nav && index === 0,
+        isNextNav: nav && index === 1
+      }
+
+      return <PostCard key={index} post={post} {...options} />
     }
   )
 

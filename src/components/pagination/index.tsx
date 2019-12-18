@@ -7,17 +7,17 @@ interface Props {
 }
 
 export const Pagination = (props: Props): React.ReactElement => {
-  const { prevPath = '/page1', nextPath = '/page2' } = props
+  const { prevPath = '/', nextPath = '/' } = props
   return (
     <S.Wrapper>
       <S.PaginationItem visible={!!prevPath}>
-        <S.PaginationLink to={prevPath || '/'}>
+        <S.PaginationLink to={prevPath}>
           <S.PaginationIcon type="arrow-left" />
           <S.PaginationLabel>PREV</S.PaginationLabel>
         </S.PaginationLink>
       </S.PaginationItem>
       <S.PaginationItem visible={!!nextPath}>
-        <S.PaginationLink to={nextPath || '/'}>
+        <S.PaginationLink to={nextPath}>
           <S.PaginationLabel>NEXT</S.PaginationLabel>
           <S.PaginationIcon type="arrow-right" />
         </S.PaginationLink>

@@ -2,6 +2,20 @@ import Styled from 'styled-components'
 import { InnerLink } from '../link'
 import Image from 'gatsby-image'
 
+export * from '../pagination/index.style'
+
+export const PaginationPosition = Styled.div`
+    position: absolute;
+    top: 0;
+    right: 24px;
+    color: #fff;
+    font-size: 24px;
+
+    i {
+        color: #fff!important; // Recover JS set
+    }
+`
+
 export const Main = Styled.div`
     padding-top: 16px;
     hyphens: auto;
@@ -42,6 +56,7 @@ export const Cover = Styled(Image)`
 `
 
 export const Wrapper = Styled(InnerLink)`
+    position: relative;
     display: block;
     flex: 0 0 50%;
     margin-bottom: 48px;

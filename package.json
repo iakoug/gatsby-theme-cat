@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-cat",
-  "version": "0.1.30",
+  "version": "0.1.33",
   "description": "A gatsby theme focus on content expression",
   "main": "index.js",
   "author": "rollawaypoint@gmail.com",
@@ -50,7 +50,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rollawaypoint/gatsby-theme-cat",
+    "url": "https://github.com/justwink/gatsby-theme-cat",
     "directory": "gatsby-theme-cat"
   },
   "keywords": [

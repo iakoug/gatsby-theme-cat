@@ -1,6 +1,4 @@
-/* eslint-disable-next-line */
 const path = require('path')
-/* eslint-disable-next-line */
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -37,13 +35,15 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
   const { totalCount, edges } = data.allMdx
-  const pageSize = 6
+  const pageSize = 4
 
   if (errors) {
     console.info('Errors: \n', JSON.stringify(errors, 0, 4))
     throw new Error('Theme Query Data Error')
   }
+
   if (edges.length <= 0) {
     throw new Error('Must Have at least one')
   }
