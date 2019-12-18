@@ -13,6 +13,8 @@ export const InnerLink = Styled(Link)`
   cursor: pointer;
   text-decoration: none;
 `
-export const LightInnerLink = Styled(InnerLink)`
+export const LightInnerLink = Styled(Link)`
   color: #0087ff;
+  cursor: pointer;
+  text-decoration: none;
 `

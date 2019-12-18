@@ -30,9 +30,7 @@ const Footer = (props: Props): React.ReactElement => {
         {props.siteMeta.siteMetadata.author}
       </S.Copyright>
       <S.SeekAllWrapper>
-        <S.SeekAllLink to={allArticlesPath}>
-          Seek all articles. 😝
-        </S.SeekAllLink>
+        <S.SeekAllLink to={allArticlesPath}>Seek the past</S.SeekAllLink>
       </S.SeekAllWrapper>
     </S.Wrapper>
   )
