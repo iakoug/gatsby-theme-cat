@@ -4,7 +4,7 @@ import * as S from './index.style'
 
 interface Props {
   posts: Wink.NodeBase[]
-  nav: boolean
+  nav?: boolean
 }
 
 export const PostList = (props: Props): React.ReactElement => {
