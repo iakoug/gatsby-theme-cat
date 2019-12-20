@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components/layout'
 import { PostList } from '../components/post-list'
 import { Pagination } from '../components/pagination'
+import { ByteDance } from '../components/byte-dance'
 
 interface Props {
   data: Wink.PostsData
@@ -17,6 +18,7 @@ export default function Page(props: Props): React.ReactElement {
   const { data } = props
   const { prevPath, nextPath } = props.pageContext
   const posts = data.allMdx.edges.map((item): Wink.NodeBase => item.node)
+  const homePage = location.pathname === '/'
 
   return (
     <Layout
@@ -25,6 +27,7 @@ export default function Page(props: Props): React.ReactElement {
       siteMeta={data.site}
     >
       <>
+        {homePage && <ByteDance />}
         <PostList posts={posts} />
         <Pagination prevPath={prevPath} nextPath={nextPath} />
       </>

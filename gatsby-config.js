@@ -21,50 +21,12 @@ const mdxPlugins = [
   }
 ]
 
-module.exports = {
-  pathPrefix: `/`,
-  siteMetadata: {
-    title: `chris kwok`,
-    siteUrl: `https://justwink.github.io/`,
-    description: `chriskwok's Personal Blog`,
-    author: `chris kwok`,
-    authorURL: `https://justwink.github.io/`,
-    socials: [
-      {
-        icon: 'mail-send',
-        name: 'Email',
-        url: 'mailto:baozaodexianyu@163.com'
-      },
-      {
-        icon: 'github',
-        name: 'GitHub',
-        url: 'https://github.com/justwink'
-      },
-      {
-        icon: 'netease-cloud-music',
-        name: 'NetEase',
-        url: 'https://music.163.com/#/user/home?id=65978744'
-      },
-      {
-        icon: 'wechat',
-        name: 'Wechat',
-        url: '/wechat.jpeg'
-      }
-    ]
-  },
+module.exports = ({
+  postPath = 'content/posts',
+  mdxExtensions = ['.mdx', '.md'],
+  htmlLang = 'en'
+}) => ({
   plugins: [
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'chris kwok',
-        short_name: 'christian',
-        start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#fff`,
-        display: `standalone`,
-        icon: 'static/favicon.png'
-      }
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-typescript`,
@@ -74,7 +36,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: 'content'
+        path: postPath
       }
     },
     {
@@ -86,7 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: mdxExtensions,
         plugins: mdxPlugins,
         remarkPlugins: mdPlugins,
         gatsbyRemarkPlugins: mdxPlugins
@@ -95,11 +57,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
-        lang: 'zh'
+        lang: htmlLang
       }
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-sitemap`
+    // `gatsby-plugin-offline`
   ]
-}
+})
