@@ -10,7 +10,7 @@ const quoteReference = [
   `"世途渺于鸟道，人情浮比鱼蛮。"`,
   `"In me the tiger sniffs the rose."`,
   `"做 30 年众生马牛，才能 60 年诸佛龙象。"`,
-  `"勇于敢所为，则杀其身。用于不敢所为，则活其身。"`,
+  `"勇于敢所为，则杀其身。勇于不敢所为，则活其身。"`,
   `"恕心养到极处，世间都无罪过。"`,
   `"真正睁眼，便见光明。"`,
   `"我见青山多妩媚，料青山见我应如是。"`,
@@ -20,7 +20,7 @@ const quoteReference = [
   `"几人得真鹿，不知终日梦为鱼。是日已过，命亦随减，如少水鱼，斯有何乐。"`,
   `"夜静水寒鱼不食，为何空欢喜。满船空载月明归，如何不欢喜。"`,
   `"尘中振衣，一样见华枝春满。泥里立足，不也是天心月圆。"`,
-  `"今夕何夕，见此良人。"`,
+  `"今夕何夕，见此良人。"`
 ]
 
 let [index, timer] = [0, 0]
@@ -30,8 +30,10 @@ export class ByteDance extends React.Component<any, State> {
     super(props)
 
     this.state = { tick: '' }
+  }
 
-    setTimeout(this.typing, 1000)
+  componentDidMount() {
+    this.typing()
   }
 
   typing = () => {
@@ -43,6 +45,7 @@ export class ByteDance extends React.Component<any, State> {
         return this.setState({ tick: quote.slice(0, index++) })
       }
 
+      index = 0 // Reset
       clearInterval(timer)
     }, 50)
   }
