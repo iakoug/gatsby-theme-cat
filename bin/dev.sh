@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# $filePath = "./temporary.js"
-
-mv gatsby-config.js temporary.js
-mv gatsby-config.dev.js gatsby-config.js
+if [ ! -f "$(pwd)/temporary.js" ]; then
+  mv gatsby-config.js temporary.js
+  mv gatsby-config.dev.js gatsby-config.js
+fi
 
 gatsby clean
 gatsby develop

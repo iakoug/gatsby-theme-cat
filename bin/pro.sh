@@ -1,5 +1,8 @@
 #!/bin/sh
 
-mv gatsby-config.js gatsby-config.dev.js
-mv temporary.js gatsby-config.js
+if [ -f "$(pwd)/temporary.js" ]; then
+  mv gatsby-config.js gatsby-config.dev.js
+  mv temporary.js gatsby-config.js
+fi
+
 npm publish
