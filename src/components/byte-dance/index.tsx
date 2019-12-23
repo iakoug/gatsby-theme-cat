@@ -43,6 +43,12 @@ const getRandomIndex = (): number => {
 
 let startIndex = getRandomIndex()
 
+const resetIndex = () => {
+  index = 0 // Reset
+
+  clearInterval(timer)
+}
+
 export class ByteDance extends React.Component<any, State> {
   constructor(props: any) {
     super(props)
@@ -68,13 +74,12 @@ export class ByteDance extends React.Component<any, State> {
         return this.setState({ tick: quote.slice(0, index++) })
       }
 
-      index = 0 // Reset
-      clearInterval(timer)
+      resetIndex()
     }, 50)
   }
 
   componentWillUnmount() {
-    clearInterval(timer) // Remove state settings effect.
+    resetIndex() // Remove state settings effect.
   }
 
   render() {
