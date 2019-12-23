@@ -13,12 +13,12 @@ export const Wrapper = Styled.div`
 
 export const Blink = Styled.span`
     @keyframes blink {
-        from {
-            opacity: 0;
+        0%, 100% {
+            opacity: 0
         }
 
-        to {
-            opacity: 1;
+        50% {
+            opacity: 1
         }
     }
 
