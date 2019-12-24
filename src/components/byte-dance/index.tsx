@@ -68,17 +68,17 @@ export class ByteDance extends React.Component<any, State> {
     const useIndex =
       startIndex > quoteReference.length - 1 ? (startIndex = 0) : startIndex
 
-    const quote = quoteReference[useIndex] || ''
+    const quote = !quoteReference[useIndex]
+      ? quoteReference[(startIndex = 0)]
+      : `${startIndex++}` && quoteReference[useIndex]
 
-    startIndex++
-
-    timer = setInterval(() => {
-      if (index <= quote.length) {
-        return this.setState({ tick: quote.slice(0, index++) })
-      }
-
-      resetIndex()
-    }, 50)
+    timer = setInterval(
+      () =>
+        quote.length
+          ? this.setState({ tick: quote.slice(0, index++) })
+          : resetIndex(),
+      50
+    )
   }
 
   componentWillUnmount() {
@@ -90,7 +90,8 @@ export class ByteDance extends React.Component<any, State> {
 
     return (
       <S.Wrapper>
-        {tick}<S.Blink>|</S.Blink>
+        {tick}
+        <S.Blink>|</S.Blink>
       </S.Wrapper>
     )
   }
