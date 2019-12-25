@@ -1,4 +1,5 @@
 import React from 'react'
+import { normal } from '../../theme'
 
 interface Props {
   type: string
@@ -14,7 +15,7 @@ export const Icon = (props: Props): React.ReactElement => {
     mode = 'line',
     className = '',
     style = {
-      color: '#3C3F45'
+      color: normal.icon.color
     }
   } = props
 

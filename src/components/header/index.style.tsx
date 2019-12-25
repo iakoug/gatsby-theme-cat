@@ -1,6 +1,9 @@
 import Styled from 'styled-components'
 import { InnerLink } from '../link'
 import { Icon } from '../Icon'
+import {normal} from '../../theme'
+
+const {header} = normal
 
 export const Wrapper = Styled.header`
     display: flex;
@@ -8,7 +11,7 @@ export const Wrapper = Styled.header`
     align-items: center;
     position: sticky;
     z-index: 9999;
-    background: #fff;
+    background: ${header.background};
     top: 0;
     left: 0;
     height: 80px;

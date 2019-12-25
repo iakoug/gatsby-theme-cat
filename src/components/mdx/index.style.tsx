@@ -1,4 +1,5 @@
 import Styled from 'styled-components'
+import {normal} from '../../theme'
 
 export const Wrapper = Styled.div`
     width: 100%;
@@ -60,7 +61,7 @@ export const Pre = Styled.pre`
                 content: counter(linenumber);
                 display: block;
                 text-align: right;
-                color: rgba(27,31,35,.3);
+                color: ${normal.lineNumber.color};
             }
         }
     }
@@ -81,7 +82,7 @@ export const Pre = Styled.pre`
     }
 
     .token.punctuation {
-        color: #24292e;
+        color: ${normal.punctuation.color};
     }
 
     .token.namespace {
@@ -184,7 +185,7 @@ export const Bloackquote = Styled.div`
     margin: 16px 0;
     padding: 16px 24px;
     border-radius: 8px;
-    background: rgb(239, 243, 245);
+    background: ${normal.quote.background};
 
     P {
         margin: 0;

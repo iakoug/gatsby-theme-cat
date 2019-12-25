@@ -56,8 +56,6 @@ body {
   line-height: 1.6;
   font-family: 'Heebo', 'PingFang SC', 'Hiragino Sans GB', Helvetica, Arial,
     sans-serif, 'Apple Color Emoji';
-  color: #3c3f45;
-  background-color: #fff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }

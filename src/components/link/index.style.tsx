@@ -1,15 +1,18 @@
 import { Link } from 'gatsby'
 import Styled from 'styled-components'
+import {normal} from '../../theme'
+
+const {header} = normal
 
 export const OuterLink = Styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer'
 })`
-  color: rgb(15, 122, 216);
+  color: ${normal.outerLink.color};
 `
 
 export const InnerLink = Styled(Link)`
-  color: #3C3F45;
+  color: ${header.color};
   cursor: pointer;
   text-decoration: none;
 `

@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet'
 import Header from '../header'
 import Footer from '../footer'
+import * as S from './index.style'
 
 interface Props {
   title: string
@@ -11,7 +12,7 @@ interface Props {
 }
 
 export const Layout = (props: Props): React.ReactElement => (
-  <Fragment>
+  <S.Layout>
     <Helmet>
       <title>{props.title}</title>
       <meta name="description" content={props.description} />
@@ -27,5 +28,5 @@ export const Layout = (props: Props): React.ReactElement => (
     <Header siteMeta={props.siteMeta} />
     {props.children}
     <Footer siteMeta={props.siteMeta} />
-  </Fragment>
+  </S.Layout>
 )

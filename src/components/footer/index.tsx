@@ -4,7 +4,7 @@ import { OuterLink } from '../link'
 import * as S from './index.style'
 
 const allArticlesPath = '/posts'
-const aboutPath = '/about'
+// const aboutPath = '/about'
 
 interface Props {
   siteMeta: Wink.Site
@@ -34,9 +34,9 @@ const Footer = (props: Props): React.ReactElement => {
       <S.SeekAllWrapper>
         <S.SeekAllLink to={allArticlesPath}>Seek the past</S.SeekAllLink>
       </S.SeekAllWrapper>
-      <S.SeekAllWrapper>
+      {/* <S.SeekAllWrapper>
         <S.SeekAllLink to={aboutPath}>About Me</S.SeekAllLink>
-      </S.SeekAllWrapper>
+      </S.SeekAllWrapper> */}
     </S.Wrapper>
   )
 }
