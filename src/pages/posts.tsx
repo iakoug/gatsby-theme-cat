@@ -10,7 +10,6 @@ interface Props {
 // const postReg = /SitePage \/post\//
 
 const nameReg = /.+\/(.+)\/index/
-const descReg = /description:(.+)/
 
 export default function Posts(props: Props): React.ReactElement {
   const { data } = props
@@ -20,10 +19,27 @@ export default function Posts(props: Props): React.ReactElement {
   //     .map(({ node: { id } }) => id.replace(/SitePage\ /, '')) || []
 
   const posts =
-    data.allMdx?.nodes?.map(({ fileAbsolutePath: n, rawBody: d }) => ({
-      name: n.match(nameReg)[1],
-      description: d.match(descReg)[1]
-    })) || []
+    data.allMdx?.nodes
+      ?.filter(({ frontmatter: { published } }) => published)
+      .sort(function(_, $) {
+        if (_.frontmatter.date < $.frontmatter.date) {
+          return 1
+        } else if (_.frontmatter.date > $.frontmatter.date) {
+          return -1
+        } else {
+          if (_.frontmatter.date < $.frontmatter.date) {
+            return -1
+          } else if (_.frontmatter.date > $.frontmatter.date) {
+            return 1
+          }
+
+          return 0
+        }
+      })
+      .map(({ fileAbsolutePath: n, frontmatter: { description } }) => ({
+        name: n.match(nameReg)[1],
+        description
+      })) || []
 
   return (
     <Layout
@@ -68,9 +84,12 @@ export const query = graphql`
 
     allMdx {
       nodes {
-        id
+        frontmatter {
+          description
+          published
+          date
+        }
         fileAbsolutePath
-        rawBody
       }
     }
   }

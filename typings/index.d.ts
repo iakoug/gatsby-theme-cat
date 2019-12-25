@@ -14,9 +14,12 @@ declare namespace Wink {
     }
     allMdx?: {
       nodes: {
-        id
         fileAbsolutePath
-        rawBody
+        frontmatter: {
+          description: string
+          published: boolean
+          date: string
+        }
       }[]
     }
   }
