@@ -6,8 +6,8 @@
   "author": "rollawaypoint@gmail.com",
   "scripts": {
     "dev": "sh bin/dev.sh",
-    "deploy": "sh bin/pro.sh",
-    "serve": "gatsby clean && gatsby develop"
+    "pro": "sh bin/pro.sh",
+    "develop": "gatsby clean && gatsby develop"
   },
   "dependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.7.7",

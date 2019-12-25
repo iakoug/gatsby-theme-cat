@@ -5,4 +5,6 @@ if [ -f "$(pwd)/temporary.js" ]; then
   mv temporary.js gatsby-config.js
 fi
 
-npm publish
+if [ ! "$1" ]; then
+  npm publish
+fi
