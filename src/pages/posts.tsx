@@ -8,7 +8,8 @@ interface Props {
 }
 
 // const postReg = /SitePage \/post\//
-const nameReg = /content\/(.+)\/index/
+
+const nameReg = /.+\/(.+)\/index/
 const descReg = /description:(.+)/
 
 export default function Posts(props: Props): React.ReactElement {
