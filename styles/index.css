@@ -22,6 +22,14 @@
   color: #000!important;
 }
 
+.ri-sun-fill, .ri-sun-line {
+  color: #ffb605!important;
+}
+
+.ri-contrast-fill, .ri-contrast-line {
+  color: #6ac126!important;
+}
+
 /* latin */
 
 @font-face {

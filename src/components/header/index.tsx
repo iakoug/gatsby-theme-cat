@@ -1,22 +1,23 @@
 import React from 'react'
 import Logo from '../logo'
 import * as S from './index.style'
+import { Icon } from '../Icon'
 import { changeThemeMode } from '../../theme'
 
 interface Props {
   siteMeta: Wink.Site
 }
 
-const modeTxt = () => {
-  let txt = `dark mode`
+const icon = () => {
+  let className = `contrast`
 
   try {
     const darkMode = window.localStorage.getItem('dark-mode') !== '0'
 
-    txt = darkMode ? 'white mode' : 'dark mode'
+    className = darkMode ? 'sun' : 'contrast'
   } catch (e) {}
 
-  return txt
+  return className
 }
 
 const Header = (props: Props): React.ReactElement => {
@@ -31,7 +32,9 @@ const Header = (props: Props): React.ReactElement => {
           </S.LogoTitle>
         </S.LogoSection>
 
-        <S.Mode onClick={changeThemeMode()}>{modeTxt()}</S.Mode>
+        <S.Mode onClick={changeThemeMode()}>
+          <Icon type={icon()} mode="fill" />
+        </S.Mode>
       </S.HeaderContainer>
     </S.Wrapper>
   )
