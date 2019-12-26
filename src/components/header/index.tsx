@@ -15,29 +15,37 @@ const icon = () => {
     const darkMode = window.localStorage.getItem('dark-mode') !== '0'
 
     className = darkMode ? 'sun' : 'contrast'
-  } catch (e) {}
+  } catch (e) {
+    console.log(e)
+  }
 
   return className
 }
 
-const Header = (props: Props): React.ReactElement => {
-  return (
-    <S.Wrapper>
-      <S.HeaderContainer>
-        <S.LogoSection to="/">
-          <Logo />
+class Header extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props)
+  }
 
-          <S.LogoTitle>
-            {props.siteMeta.siteMetadata.title.toUpperCase()}
-          </S.LogoTitle>
-        </S.LogoSection>
+  render() {
+    return (
+      <S.Wrapper>
+        <S.HeaderContainer>
+          <S.LogoSection to="/">
+            <Logo />
 
-        <S.Mode onClick={changeThemeMode()}>
-          <Icon type={icon()} mode="fill" />
-        </S.Mode>
-      </S.HeaderContainer>
-    </S.Wrapper>
-  )
+            <S.LogoTitle>
+              {this.props.siteMeta.siteMetadata.title.toUpperCase()}
+            </S.LogoTitle>
+          </S.LogoSection>
+
+          <S.Mode onClick={changeThemeMode()}>
+            <Icon type={icon()} mode="fill" />
+          </S.Mode>
+        </S.HeaderContainer>
+      </S.Wrapper>
+    )
+  }
 }
 
 export default Header

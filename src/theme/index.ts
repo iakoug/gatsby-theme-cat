@@ -6,13 +6,11 @@ export const dark = {
 
   layout: {
     background: `#3C3F45`,
-    className: `theme-layout`
   },
 
   header: {
     color: `#fff`,
     background: `#3C3F45`,
-    className: `theme-header`
   },
 
   icon: {
@@ -53,13 +51,11 @@ export const white = {
 
   layout: {
     background: `#fff`,
-    className: `theme-layout`
   },
 
   header: {
     color: `#3C3F45`,
     background: `#fff`,
-    className: `theme-header`
   },
 
   icon: {
@@ -101,7 +97,9 @@ const htmlSettings = (theme = white) => {
 const defaultMode = () => {
   try {
     htmlSettings(white)
-  } catch (e) {}
+  } catch (e) {
+    console.log(e)
+  }
 
   return white
 }
@@ -116,16 +114,11 @@ export const theme = () => {
     htmlSettings(theme)
   } catch (e) {
     theme = defaultMode()
+    console.log(e)
   }
 
   return theme
 }
-
-try {
-  ;(document.querySelector('html') as any).style.color = dark.html.color
-  ;(document.querySelector('html') as any).style.background =
-    dark.html.background
-} catch (e) {}
 
 export const changeThemeMode = () => () => {
   try {
@@ -134,5 +127,7 @@ export const changeThemeMode = () => () => {
     window.localStorage.setItem('dark-mode', `${darkMode === '1' ? 0 : 1}`)
 
     window.location.reload()
-  } catch (e) {}
+  } catch (e) {
+    console.log(e)
+  }
 }
