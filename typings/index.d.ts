@@ -50,6 +50,7 @@ declare namespace Wink {
       icon: string
       name: string
       url: string
+      mode: 'fill' | 'line'
     }[]
   }
 

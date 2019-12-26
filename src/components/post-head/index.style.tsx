@@ -1,6 +1,8 @@
 import Styled from 'styled-components'
 import Image from 'gatsby-image'
-import {normal} from '../../theme'
+import {theme as getTheme} from '../../theme'
+
+const theme = getTheme()
 
 export const Main = Styled.div`
     margin: 48px auto;
@@ -55,7 +57,7 @@ export const CoverImage = Styled(Image)`
 
 export const CoverMeta = Styled.p`
     padding: 16px 0;
-    color: ${normal.coverMeta.color};
+    color: ${theme.coverMeta.color};
     font-weight: 400;
     text-align: center;
 `

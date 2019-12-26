@@ -1,6 +1,8 @@
 import Styled from 'styled-components'
 import { LightInnerLink } from '../link'
-import {normal} from '../../theme'
+import {theme as getTheme} from '../../theme'
+
+const theme = getTheme()
 
 export const SeekAllLink = Styled(LightInnerLink)``
 
@@ -25,7 +27,7 @@ export const Copyright = Styled.span`
     width: 100%;
     text-align: center;
     margin-top: 10px;
-    color: ${normal.copyright.color};
+    color: ${theme.copyright.color};
 `
 
 export const SocialList = Styled.ul`

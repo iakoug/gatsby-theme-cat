@@ -1,10 +1,22 @@
 import React from 'react'
-import { OuterLink } from '../link'
 import Logo from '../logo'
 import * as S from './index.style'
+import { changeThemeMode } from '../../theme'
 
 interface Props {
   siteMeta: Wink.Site
+}
+
+const modeTxt = () => {
+  let txt = `dark mode`
+
+  try {
+    const darkMode = window.localStorage.getItem('dark-mode') !== '0'
+
+    txt = darkMode ? 'white mode' : 'dark mode'
+  } catch (e) {}
+
+  return txt
 }
 
 const Header = (props: Props): React.ReactElement => {
@@ -19,13 +31,7 @@ const Header = (props: Props): React.ReactElement => {
           </S.LogoTitle>
         </S.LogoSection>
 
-        <OuterLink
-          title="search this site"
-          href="https://www.google.com/search?q=rollawaypoint"
-        >
-          {/* placeholder */}
-          {/* <S.SearchIcon /> */}
-        </OuterLink>
+        <S.Mode onClick={changeThemeMode()}>{modeTxt()}</S.Mode>
       </S.HeaderContainer>
     </S.Wrapper>
   )

@@ -1,17 +1,21 @@
 import Styled from 'styled-components'
 import { InnerLink } from '../link'
 import { Icon } from '../Icon'
-import {normal} from '../../theme'
+import {theme as getTheme} from '../../theme'
 
-const {header} = normal
+const theme = getTheme()
 
-export const Wrapper = Styled.header`
+export const Mode = Styled.span``
+
+export const Wrapper = Styled.header.attrs({
+    className: 'theme-header'
+  })`
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     z-index: 9999;
-    background: ${header.background};
+    background: ${theme.header.background};
     top: 0;
     left: 0;
     height: 80px;

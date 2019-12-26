@@ -1,9 +1,11 @@
 import React from 'react'
-import { normal } from '../../theme'
+import { theme as getTheme} from '../../theme'
+
+const theme = getTheme()
 
 interface Props {
   type: string
-  mode?: 'line' | 'fill'
+  mode?: string
   className?: string
   style?: React.CSSProperties
 }
@@ -15,9 +17,9 @@ export const Icon = (props: Props): React.ReactElement => {
     mode = 'line',
     className = '',
     style = {
-      color: normal.icon.color
+      color: theme.icon.color
     }
   } = props
 
-  return <i className={`ri-${type}-${mode} ${className}`} style={style} />
+  return <i className={`ri-${type}-${mode || 'line'} ${className}`} style={style} />
 }

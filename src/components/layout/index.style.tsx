@@ -1,8 +1,12 @@
 import Styled from 'styled-components'
-import {normal} from '../../theme'
+import {theme as getTheme} from '../../theme'
 
-export  const Layout = Styled.div`
+const theme = getTheme()
+
+export  const Layout = Styled.div.attrs({
+  className: 'theme-layout'
+})`
   width: 100%;
   min-width: 100%;
-  background: ${normal.background};
+  background: ${theme.layout.background};
 `

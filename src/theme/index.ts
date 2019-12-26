@@ -1,14 +1,18 @@
-export const normal_ = {
+export const dark = {
   html: {
     color: `#fff`,
     background: `#3C3F45`
   },
 
-  background: `#3C3F45`,
+  layout: {
+    background: `#3C3F45`,
+    className: `theme-layout`
+  },
 
   header: {
     color: `#fff`,
-    background: `#3C3F45`
+    background: `#3C3F45`,
+    className: `theme-header`
   },
 
   icon: {
@@ -33,7 +37,7 @@ export const normal_ = {
   },
 
   outerLink: {
-    color: `#fff`
+    color: `#0087ff`
   },
 
   copyright: {
@@ -41,17 +45,21 @@ export const normal_ = {
   }
 }
 
-export const normal = {
+export const white = {
   html: {
     color: `#3C3F45`,
     background: `#fff`
   },
 
-  background: `#fff`,
+  layout: {
+    background: `#fff`,
+    className: `theme-layout`
+  },
 
   header: {
     color: `#3C3F45`,
-    background: `#fff`
+    background: `#fff`,
+    className: `theme-header`
   },
 
   icon: {
@@ -76,7 +84,7 @@ export const normal = {
   },
 
   outerLink: {
-    color: `#3C3F45`
+    color: `#0087ff`
   },
 
   copyright: {
@@ -84,8 +92,47 @@ export const normal = {
   }
 }
 
-try {
-  ;(document.querySelector('html') as any).style.color = normal.html.color
+const htmlSettings = (theme = white) => {
+  ;(document.querySelector('html') as any).style.color = theme.html.color
   ;(document.querySelector('html') as any).style.background =
-    normal.html.background
+    theme.html.background
+}
+
+const defaultMode = () => {
+  try {
+    htmlSettings(white)
+  } catch (e) {}
+
+  return white
+}
+
+export const theme = () => {
+  let theme = white
+
+  try {
+    const darkMode = window.localStorage.getItem('dark-mode') === '1'
+    theme = darkMode ? dark : white
+
+    htmlSettings(theme)
+  } catch (e) {
+    theme = defaultMode()
+  }
+
+  return theme
+}
+
+try {
+  ;(document.querySelector('html') as any).style.color = dark.html.color
+  ;(document.querySelector('html') as any).style.background =
+    dark.html.background
 } catch (e) {}
+
+export const changeThemeMode = () => () => {
+  try {
+    const darkMode = window.localStorage.getItem('dark-mode')
+
+    window.localStorage.setItem('dark-mode', `${darkMode === '1' ? 0 : 1}`)
+
+    window.location.reload()
+  } catch (e) {}
+}
