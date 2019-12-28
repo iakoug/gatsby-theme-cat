@@ -1,7 +1,4 @@
 import Styled from 'styled-components'
-import { theme as getTheme } from '../../theme'
-
-const theme = getTheme()
 
 export const Wrapper = Styled.div`
     width: 100%;
@@ -23,7 +20,9 @@ export const Wrapper = Styled.div`
     }
 `
 
-export const Code = Styled.code`
+export const Code = Styled.code.attrs({
+  className: 'theme-code'
+})`
     margin: 0 4px;
     padding: 2px 8px;
     border-radius: 4px;
@@ -63,7 +62,6 @@ export const Pre = Styled.pre`
                 content: counter(linenumber);
                 display: block;
                 text-align: right;
-                color: ${theme.lineNumber.color};
             }
         }
     }
@@ -81,10 +79,6 @@ export const Pre = Styled.pre`
     .token.doctype,
     .token.cdata {
         color: #6a737d;
-    }
-
-    .token.punctuation {
-        color: ${theme.punctuation.color};
     }
 
     .token.namespace {
@@ -189,7 +183,6 @@ export const Bloackquote = Styled.div.attrs({
     margin: 16px 0;
     padding: 16px 24px;
     border-radius: 8px;
-    background: ${theme.quote.background};
 
     P {
         margin: 0;

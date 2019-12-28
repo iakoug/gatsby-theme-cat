@@ -90,10 +90,12 @@ export const white = {
 
 const isDarkMode = () => window.localStorage.getItem('dark-mode') === '1'
 
-const htmlSettings = (theme = white) => {
-  ;(document.querySelector('html') as any).style.color = theme.html.color
-  ;(document.querySelector('html') as any).style.background =
-    theme.html.background
+function insertCSS(css: any) {
+  var style = document.createElement('style')
+
+  style.type = 'text/css'
+  style.innerHTML = css
+  ;(document as any).querySelector('head').appendChild(style)
 }
 
 const clutter = () => {
@@ -103,66 +105,43 @@ const clutter = () => {
     // 使用 styled-component 使用主题变量替换切换的下一个主题需要触发跳转才会生效
     // I do not know why.
 
-    document.querySelectorAll('.theme-post').forEach((dom: any) => {
-      dom.style.color = isDark ? '#3C3F45' : '#fff'
-    })
+    const css = `
+      html,
+      .theme-header,
+      .theme-layout {
+        background: ${isDark ? '#3C3F45' : '#fff'};
+        color: ${isDark ? '#fff' : '#3C3F45'};
+      }
+      .theme-post {
+        color: ${isDark ? '#3C3F45' : '#fff'};
+      }
 
-    document.querySelectorAll('.theme-quote').forEach((dom: any) => {
-      dom.style.background = isDark ? '#000' : 'rgb(239, 243, 245)'
-    })
+      .theme-code {
+        color: ${isDark ? '#fff' : '#3C3F45'};
+        background: ${isDark ? '#000' : 'rgb(239,243,245)'};
+      }
 
-    document.querySelectorAll('.theme-header').forEach((dom: any) => {
-      dom.style.background = isDark ? '#3C3F45' : '#fff'
-      dom.style.color = isDark ? '#fff' : '#3C3F45'
-    })
+      .theme-quote {
+        background: ${isDark ? '#000' : 'rgb(239, 243, 245)'};
+      }
 
-    document.querySelectorAll('.theme-layout').forEach((dom: any) => {
-      dom.style.background = isDark ? '#3C3F45' : '#fff'
-      dom.style.color = isDark ? '#fff' : '#3C3F45'
-    })
+      .theme-copyright,
+      .theme-logo,
+      .theme-coverMeta {
+        color: ${isDark ? '#fff' : '#3C3F45'};
+      }
 
-    document.querySelectorAll('.theme-copyright').forEach((dom: any) => {
-      dom.style.color = isDark ? '#fff' : '#3C3F45'
-    })
+      .line-numbers-rows span:before {
+        color: ${isDark ? 'rgba(34, 134, 58)' : 'rgba(27,31,35,.3)'};
+      }
 
-    document.querySelectorAll('.theme-logo').forEach((dom: any) => {
-      dom.style.color = isDark ? '#fff' : '#3C3F45'
-    })
+      .punctuation {
+        color: ${isDark ? '#fff' : '#24292e'};
+      }
+    `
 
-    document.querySelectorAll('.theme-coverMeta').forEach((dom: any) => {
-      dom.style.color = isDark ? '#fff' : '#3C3F45'
-    })
+    insertCSS(css)
   } catch (e) {}
-}
-
-try {
-  setTimeout(clutter, 1)
-} catch (e) {}
-
-const defaultMode = () => {
-  try {
-    htmlSettings(white)
-  } catch (e) {
-    console.log(e)
-  }
-
-  return white
-}
-
-export const theme = () => {
-  let theme = white
-
-  try {
-    const darkMode = window.localStorage.getItem('dark-mode') === '1'
-    theme = darkMode ? dark : white
-
-    htmlSettings(theme)
-  } catch (e) {
-    theme = defaultMode()
-    console.log(e)
-  }
-
-  return theme
 }
 
 export const changeThemeMode = () => () => {
@@ -176,3 +155,21 @@ export const changeThemeMode = () => () => {
     console.log(e)
   }
 }
+
+export const theme = (function() {
+  let theme = white
+
+  try {
+    const darkMode = isDarkMode()
+    theme = darkMode ? dark : white
+  } catch (e) {
+    theme = white
+    console.log(e)
+  }
+
+  return theme
+})()
+
+try {
+  setTimeout(clutter, 1)
+} catch (e) {}

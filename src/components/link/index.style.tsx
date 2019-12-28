@@ -1,14 +1,12 @@
 import { Link } from 'gatsby'
 import Styled from 'styled-components'
-import { theme as getTheme} from '../../theme'
-
-const theme = getTheme()
+import { theme } from '../../theme'
 
 export const OuterLink = Styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer'
 })`
-  color: ${theme.outerLink.color};
+  color: #0087ff;
 `
 
 export const InnerLink = Styled(Link).attrs({

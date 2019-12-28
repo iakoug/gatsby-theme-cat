@@ -1,7 +1,5 @@
 import Styled from 'styled-components'
-import { theme as getTheme } from '../../theme'
-
-const theme = getTheme()
+import { theme } from '../../theme'
 
 export const Layout = Styled.div.attrs({
   className: 'theme-layout'

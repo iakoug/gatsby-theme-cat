@@ -1,15 +1,13 @@
 import Styled from 'styled-components'
 import { InnerLink } from '../link'
 import { Icon } from '../Icon'
-import {theme as getTheme} from '../../theme'
-
-const theme = getTheme()
+import { theme } from '../../theme'
 
 export const Mode = Styled.span``
 
 export const Wrapper = Styled.header.attrs({
-    className: 'theme-header'
-  })`
+  className: 'theme-header'
+})`
     display: flex;
     justify-content: space-between;
     align-items: center;

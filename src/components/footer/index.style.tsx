@@ -1,8 +1,7 @@
 import Styled from 'styled-components'
 import { LightInnerLink } from '../link'
-import { theme as getTheme } from '../../theme'
+import {theme} from '../../theme'
 
-const theme = getTheme()
 
 export const SeekAllLink = Styled(LightInnerLink)``
 

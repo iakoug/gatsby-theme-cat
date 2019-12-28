@@ -1,7 +1,4 @@
 import React from 'react'
-import { theme as getTheme} from '../../theme'
-
-const theme = getTheme()
 
 interface Props {
   type: string
@@ -12,14 +9,9 @@ interface Props {
 
 // https://remixicon.com
 export const Icon = (props: Props): React.ReactElement => {
-  const {
-    type = '',
-    mode = 'line',
-    className = '',
-    style = {
-      color: theme.icon.color
-    }
-  } = props
+  const { type = '', mode = 'line', className = '', style = {} } = props
 
-  return <i className={`ri-${type}-${mode || 'line'} ${className}`} style={style} />
+  return (
+    <i className={`ri-${type}-${mode || 'line'} ${className}`} style={style} />
+  )
 }
