@@ -5,12 +5,12 @@ export const dark = {
   },
 
   layout: {
-    background: `#3C3F45`,
+    background: `#3C3F45`
   },
 
   header: {
     color: `#fff`,
-    background: `#3C3F45`,
+    background: `#3C3F45`
   },
 
   icon: {
@@ -50,12 +50,12 @@ export const white = {
   },
 
   layout: {
-    background: `#fff`,
+    background: `#fff`
   },
 
   header: {
     color: `#3C3F45`,
-    background: `#fff`,
+    background: `#fff`
   },
 
   icon: {
@@ -88,11 +88,56 @@ export const white = {
   }
 }
 
+const isDarkMode = () => window.localStorage.getItem('dark-mode') === '1'
+
 const htmlSettings = (theme = white) => {
   ;(document.querySelector('html') as any).style.color = theme.html.color
   ;(document.querySelector('html') as any).style.background =
     theme.html.background
 }
+
+const clutter = () => {
+  try {
+    const isDark = isDarkMode()
+
+    // 使用 styled-component 使用主题变量替换切换的下一个主题需要触发跳转才会生效
+    // I do not know why.
+
+    document.querySelectorAll('.theme-post').forEach((dom: any) => {
+      dom.style.color = isDark ? '#3C3F45' : '#fff'
+    })
+
+    document.querySelectorAll('.theme-quote').forEach((dom: any) => {
+      dom.style.background = isDark ? '#000' : 'rgb(239, 243, 245)'
+    })
+
+    document.querySelectorAll('.theme-header').forEach((dom: any) => {
+      dom.style.background = isDark ? '#3C3F45' : '#fff'
+      dom.style.color = isDark ? '#fff' : '#3C3F45'
+    })
+
+    document.querySelectorAll('.theme-layout').forEach((dom: any) => {
+      dom.style.background = isDark ? '#3C3F45' : '#fff'
+      dom.style.color = isDark ? '#fff' : '#3C3F45'
+    })
+
+    document.querySelectorAll('.theme-copyright').forEach((dom: any) => {
+      dom.style.color = isDark ? '#fff' : '#3C3F45'
+    })
+
+    document.querySelectorAll('.theme-logo').forEach((dom: any) => {
+      dom.style.color = isDark ? '#fff' : '#3C3F45'
+    })
+
+    document.querySelectorAll('.theme-coverMeta').forEach((dom: any) => {
+      dom.style.color = isDark ? '#fff' : '#3C3F45'
+    })
+  } catch (e) {}
+}
+
+try {
+  setTimeout(clutter, 1)
+} catch (e) {}
 
 const defaultMode = () => {
   try {

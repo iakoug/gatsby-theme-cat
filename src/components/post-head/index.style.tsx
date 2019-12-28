@@ -1,8 +1,5 @@
 import Styled from 'styled-components'
 import Image from 'gatsby-image'
-import {theme as getTheme} from '../../theme'
-
-const theme = getTheme()
 
 export const Main = Styled.div`
     margin: 48px auto;
@@ -55,9 +52,10 @@ export const CoverImage = Styled(Image)`
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 `
 
-export const CoverMeta = Styled.p`
+export const CoverMeta = Styled.p.attrs({
+  className: 'theme-coverMeta'
+})`
     padding: 16px 0;
-    color: ${theme.coverMeta.color};
     font-weight: 400;
     text-align: center;
 `

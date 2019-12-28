@@ -37,6 +37,7 @@ export const HeaderContainer = Styled.div`
 export const LogoSection = Styled(InnerLink)``
 
 export const LogoIcon = Styled(Icon).attrs({
+  className: 'theme-logo',
   type: 'goblet'
 })`
     padding-right: 8px;

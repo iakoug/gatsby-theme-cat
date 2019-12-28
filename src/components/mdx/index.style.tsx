@@ -1,5 +1,5 @@
 import Styled from 'styled-components'
-import {theme as getTheme} from '../../theme'
+import { theme as getTheme } from '../../theme'
 
 const theme = getTheme()
 
@@ -183,7 +183,9 @@ export const H6 = Styled.h6`
     font-size: 12px;
 `
 
-export const Bloackquote = Styled.div`
+export const Bloackquote = Styled.div.attrs({
+  className: 'theme-quote'
+})`
     margin: 16px 0;
     padding: 16px 24px;
     border-radius: 8px;
