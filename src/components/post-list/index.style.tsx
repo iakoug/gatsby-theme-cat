@@ -6,7 +6,9 @@ export const Wrapper = Styled.section`
     margin: 48px auto;
 `
 
-export const List = Styled.div`
+export const List = Styled.div.attrs({
+  className: 'theme-post'
+})`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

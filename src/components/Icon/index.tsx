@@ -2,21 +2,16 @@ import React from 'react'
 
 interface Props {
   type: string
-  mode?: 'line' | 'fill'
+  mode?: string
   className?: string
   style?: React.CSSProperties
 }
 
 // https://remixicon.com
 export const Icon = (props: Props): React.ReactElement => {
-  const {
-    type = '',
-    mode = 'line',
-    className = '',
-    style = {
-      color: '#3C3F45'
-    }
-  } = props
+  const { type = '', mode = 'line', className = '', style = {} } = props
 
-  return <i className={`ri-${type}-${mode} ${className}`} style={style} />
+  return (
+    <i className={`ri-${type}-${mode || 'line'} ${className}`} style={style} />
+  )
 }

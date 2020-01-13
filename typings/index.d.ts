@@ -5,10 +5,20 @@ declare module 'react-medium-image-zoom'
 declare namespace Wink {
   export interface Posts {
     site: Site
-    allSitePage: {
+    allSitePage?: {
       edges: {
         node: {
           id: string
+        }
+      }[]
+    }
+    allMdx?: {
+      nodes: {
+        fileAbsolutePath
+        frontmatter: {
+          description: string
+          published: boolean
+          date: string
         }
       }[]
     }
@@ -40,6 +50,7 @@ declare namespace Wink {
       icon: string
       name: string
       url: string
+      mode: 'fill' | 'line'
     }[]
   }
 

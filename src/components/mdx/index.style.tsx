@@ -20,7 +20,9 @@ export const Wrapper = Styled.div`
     }
 `
 
-export const Code = Styled.code`
+export const Code = Styled.code.attrs({
+  className: 'theme-code'
+})`
     margin: 0 4px;
     padding: 2px 8px;
     border-radius: 4px;
@@ -60,7 +62,6 @@ export const Pre = Styled.pre`
                 content: counter(linenumber);
                 display: block;
                 text-align: right;
-                color: rgba(27,31,35,.3);
             }
         }
     }
@@ -78,10 +79,6 @@ export const Pre = Styled.pre`
     .token.doctype,
     .token.cdata {
         color: #6a737d;
-    }
-
-    .token.punctuation {
-        color: #24292e;
     }
 
     .token.namespace {
@@ -180,11 +177,12 @@ export const H6 = Styled.h6`
     font-size: 12px;
 `
 
-export const Bloackquote = Styled.div`
+export const Bloackquote = Styled.div.attrs({
+  className: 'theme-quote'
+})`
     margin: 16px 0;
     padding: 16px 24px;
     border-radius: 8px;
-    background: rgb(239, 243, 245);
 
     P {
         margin: 0;
@@ -234,7 +232,7 @@ export const Td = Styled.td`
 
 export const Em = Styled.em`
     padding: 2px 4px;
-    font-style: normal;
+    font-style: theme;
     background: rgba(196,240,255,.5);
 `
 

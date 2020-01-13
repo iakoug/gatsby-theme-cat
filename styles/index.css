@@ -2,6 +2,52 @@
 
 /* latin */
 
+.ri-mail-send-fill,
+.ri-mail-send-line {
+  color: #ffb605 !important;
+}
+
+.ri-netease-cloud-music-fill,
+.ri-netease-cloud-music-line {
+  color: #e84531 !important;
+}
+
+.ri-wechat-fill,
+.ri-wechat-line {
+  color: #19a218 !important;
+}
+
+.ri-telegram-fill,
+.ri-telegram-line {
+  color: #007dc5 !important;
+}
+
+.ri-github-fill,
+.ri-github-line {
+  color: #000 !important;
+}
+
+.ri-sun-fill,
+.ri-sun-line {
+  color: #ffb605 !important;
+}
+
+.ri-contrast-fill,
+.ri-contrast-line {
+  color: #6ac126 !important;
+}
+
+.ri-sun-fill,
+.ri-sun-line,
+.ri-contrast-fill,
+.ri-contrast-line {
+  position: relative;
+  padding: 8px;
+  right: -8px;
+}
+
+/* latin */
+
 @font-face {
   font-family: 'Heebo';
   font-style: normal;
@@ -56,8 +102,6 @@ body {
   line-height: 1.6;
   font-family: 'Heebo', 'PingFang SC', 'Hiragino Sans GB', Helvetica, Arial,
     sans-serif, 'Apple Color Emoji';
-  color: #3c3f45;
-  background-color: #fff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }

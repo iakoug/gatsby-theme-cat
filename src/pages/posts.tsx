@@ -7,13 +7,39 @@ interface Props {
   data: Wink.Posts
 }
 
-const postReg = /SitePage \/post\//
+// const postReg = /SitePage \/post\//
+
+const nameReg = /.+\/(.+)\/index/
 
 export default function Posts(props: Props): React.ReactElement {
   const { data } = props
-  const posts = data.allSitePage.edges
-    .filter(({ node: { id } }) => postReg.test(id))
-    .map(({ node: { id } }) => id.replace(/SitePage\ /, ''))
+  // const posts =
+  //   data?.allSitePage?.edges
+  //     .filter(({ node: { id } }) => postReg.test(id))
+  //     .map(({ node: { id } }) => id.replace(/SitePage\ /, '')) || []
+
+  const posts =
+    data.allMdx?.nodes
+      ?.filter(({ frontmatter: { published } }) => published)
+      .sort(function(_, $) {
+        if (_.frontmatter.date < $.frontmatter.date) {
+          return 1
+        } else if (_.frontmatter.date > $.frontmatter.date) {
+          return -1
+        } else {
+          if (_.frontmatter.date < $.frontmatter.date) {
+            return -1
+          } else if (_.frontmatter.date > $.frontmatter.date) {
+            return 1
+          }
+
+          return 0
+        }
+      })
+      .map(({ fileAbsolutePath: n, frontmatter: { description } }) => ({
+        name: n.match(nameReg)[1],
+        description
+      })) || []
 
   return (
     <Layout
@@ -53,6 +79,17 @@ export const query = graphql`
         node {
           id
         }
+      }
+    }
+
+    allMdx {
+      nodes {
+        frontmatter {
+          description
+          published
+          date
+        }
+        fileAbsolutePath
       }
     }
   }

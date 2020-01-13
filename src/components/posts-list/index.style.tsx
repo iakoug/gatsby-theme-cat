@@ -13,3 +13,5 @@ export const List = Styled.div`
   padding: 10px;
   margin: 4px 0;
 `
+
+export const Description = Styled.p``

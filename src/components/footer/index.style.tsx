@@ -1,5 +1,7 @@
 import Styled from 'styled-components'
 import { LightInnerLink } from '../link'
+import {theme} from '../../theme'
+
 
 export const SeekAllLink = Styled(LightInnerLink)``
 
@@ -18,12 +20,15 @@ export const Wrapper = Styled.footer`
     padding: 48px 0;
 `
 
-export const Copyright = Styled.span`
+export const Copyright = Styled.span.attrs({
+  className: 'theme-copyright'
+})`
     display: block;
     font-weight: 500;
     width: 100%;
     text-align: center;
     margin-top: 10px;
+    color: ${theme.copyright.color};
 `
 
 export const SocialList = Styled.ul`
