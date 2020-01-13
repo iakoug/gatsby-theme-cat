@@ -152,7 +152,7 @@ export const changeThemeMode = () => () => {
 
     window.location.reload()
   } catch (e) {
-    console.log(e)
+    // console.log(e)
   }
 }
 
@@ -164,7 +164,7 @@ export const theme = (function() {
     theme = darkMode ? dark : white
   } catch (e) {
     theme = white
-    console.log(e)
+    // console.log(e)
   }
 
   return theme

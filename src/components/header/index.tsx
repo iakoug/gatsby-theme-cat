@@ -16,7 +16,7 @@ const icon = () => {
 
     className = darkMode ? 'sun' : 'contrast'
   } catch (e) {
-    console.log(e)
+    // console.log(e)
   }
 
   return className
