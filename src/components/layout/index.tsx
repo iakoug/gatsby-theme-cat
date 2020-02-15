@@ -23,7 +23,8 @@ export class Layout extends React.Component<Props> {
           <title>{this.props.title}</title>
           <meta name="description" content={this.props.description} />
           <link
-            href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css"
+            // href="https://cdn.remixicon.com/releases/v2.0.0/remixicon.css"
+            href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
             rel="stylesheet"
           ></link>
           <link
