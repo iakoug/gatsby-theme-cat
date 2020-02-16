@@ -24,7 +24,7 @@ module.exports = {
     description: `chriskwok's Personal Blog`,
     author: `chris kwok`,
     siteLogo: 'sun', // Remix icon
-    byteDance: [], // Typewriter
+    byteDance: [''], // Typewriter
     authorURL: `https://justwink.cn/`,
     socials: [
       {

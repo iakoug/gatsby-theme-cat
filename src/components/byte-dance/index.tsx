@@ -8,8 +8,6 @@ interface State {
 let [index, timer] = [0, 0]
 let duplicateIndex = 0
 
-// let startIndex = this.getRandomIndex()
-
 const resetIndex = () => {
   index = 0 // Reset
 
@@ -18,13 +16,16 @@ const resetIndex = () => {
 
 export class ByteDance extends React.Component<any, State> {
   quoteReference: string[]
+  startIndex: number
 
   constructor(props: any) {
     super(props)
 
     this.state = { tick: '' }
-
-    this.quoteReference = props.siteMeta.siteMetadata.byteDance || []
+    this.quoteReference = (props.siteMeta.siteMetadata.byteDance || []).filter(
+      Boolean
+    )
+    this.startIndex = this.getRandomIndex()
   }
 
   componentDidMount() {
@@ -36,7 +37,7 @@ export class ByteDance extends React.Component<any, State> {
   getRandomIndex = (): number => {
     const currentIndex = Math.floor(Math.random() * this.quoteReference.length)
 
-    return duplicateIndex === currentIndex
+    return this.quoteReference.length > 1 && duplicateIndex === currentIndex
       ? this.getRandomIndex()
       : (duplicateIndex = currentIndex)
   }
@@ -45,11 +46,13 @@ export class ByteDance extends React.Component<any, State> {
     const quote = this.quoteReference[this.getRandomIndex()]
 
     // const useIndex =
-    // startIndex > this.quoteReference.length - 1 ? (startIndex = 0) : startIndex
+    //   this.startIndex > this.quoteReference.length - 1
+    //     ? (this.startIndex = 0)
+    //     : this.startIndex
 
     // const quote = !this.quoteReference[useIndex]
-    //   ? this.quoteReference[(startIndex = 0)]
-    //   : `${startIndex++}` && this.quoteReference[useIndex]
+    //   ? this.quoteReference[(this.startIndex = 0)]
+    //   : `${this.startIndex++}` && this.quoteReference[useIndex]
 
     timer = setInterval(
       () =>
