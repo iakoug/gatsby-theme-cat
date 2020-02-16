@@ -58,6 +58,8 @@ export const query = graphql`
       title
       description
       siteUrl
+      siteLogo
+      byteDance
       author
       authorURL
       socials {

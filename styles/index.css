@@ -43,7 +43,7 @@
 .ri-contrast-line {
   position: relative;
   padding: 8px;
-  right: -8px;
+  /* right: -8px; */
 }
 
 /* latin */

@@ -6,4 +6,4 @@ if [ ! -f "$(pwd)/temporary.js" ]; then
 fi
 
 gatsby clean
-gatsby develop
+gatsby develop -p 9000

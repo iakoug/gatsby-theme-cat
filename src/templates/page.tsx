@@ -26,7 +26,7 @@ export default function Page(props: Props): React.ReactElement {
       siteMeta={data.site}
     >
       <>
-        <ByteDance />
+        <ByteDance siteMeta={data.site} />
         <PostList posts={posts} />
         <Pagination prevPath={prevPath} nextPath={nextPath} />
       </>
@@ -40,6 +40,8 @@ export const query = graphql`
       title
       description
       siteUrl
+      siteLogo
+      byteDance
       author
       authorURL
       socials {

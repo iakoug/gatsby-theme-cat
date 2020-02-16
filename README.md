@@ -17,28 +17,46 @@ yarn deploy
 
 _gatsby-config:_
 ```js
-plugins: [
-  {
-    resolve: `gatsby-theme-cat`,
-    options: {
-      postPath: 'posts',
-      mdxExtensions: ['.mdx', '.md'],
-      htmlLang: 'zh'
-    }
+module.exports = {
+  siteMetadata: {
+    title: `chris kwok`,
+    siteUrl: `https://justwink.cn/`,
+    description: `chriskwok's Personal Blog`,
+    author: `chris kwok`,
+    siteLogo: 'sun', // Remix icon
+    byteDance: [], // Typewriter
+    authorURL: `https://justwink.cn/`,
+    socials: [
+      {
+        icon: 'mail-send',
+        name: 'Email',
+        url: 'mailto:baozaodexianyu@163.com'
+      },
+    ]
   },
-  {
-    resolve: `gatsby-plugin-manifest`,
-    options: {
-      name: 'chris kwok',
-      short_name: 'christian',
-      start_url: `/`,
-      background_color: `#fff`,
-      theme_color: `#fff`,
-      display: `standalone`,
-      icon: 'static/favicon.png'
+  plugins: [
+    {
+      resolve: `gatsby-theme-cat`,
+      options: {
+        postPath: 'posts',
+        mdxExtensions: ['.mdx', '.md'],
+        htmlLang: 'zh'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'chris kwok',
+        short_name: 'christian',
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `standalone`,
+        icon: 'static/favicon.png'
+      }
     }
-  }
-]
+  ]
+}
 ```
 
 _markdown:_

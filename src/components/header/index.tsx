@@ -32,7 +32,7 @@ class Header extends React.Component<Props> {
       <S.Wrapper>
         <S.HeaderContainer>
           <S.LogoSection to="/">
-            <Logo />
+            {Logo(this.props.siteMeta.siteMetadata.siteLogo)}
 
             <S.LogoTitle>
               {this.props.siteMeta.siteMetadata.title.toUpperCase()}

@@ -44,6 +44,8 @@ declare namespace Wink {
     title: string
     description: string
     siteUrl: string
+    siteLogo: string
+    byteDance: string[]
     author: string
     authorURL: string
     socials: {
