@@ -62,7 +62,8 @@ module.exports = ({
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-remove-trailing-slashes`,
-    `gatsby-plugin-sitemap`
-    // `gatsby-plugin-offline`
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-no-sourcemaps`,
+    `gatsby-plugin-offline`,
   ]
 })
