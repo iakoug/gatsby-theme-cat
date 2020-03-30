@@ -91,11 +91,20 @@ export const white = {
 const isDarkMode = () => window.localStorage.getItem('dark-mode') === '1'
 
 function insertCSS(css: any) {
-  var style = document.createElement('style')
+  const cssTag = document.head.querySelector('#theme-style')
 
+  if (cssTag) {
+    cssTag.innerHTML = css
+
+    return
+  }
+
+  const style = document.createElement('style')
+
+  style.id = 'theme-style'
   style.type = 'text/css'
   style.innerHTML = css
-  ;(document as any).querySelector('head').appendChild(style)
+  document.head.appendChild(style)
 }
 
 const clutter = () => {
@@ -150,7 +159,8 @@ export const changeThemeMode = () => () => {
 
     window.localStorage.setItem('dark-mode', `${darkMode === '1' ? 0 : 1}`)
 
-    window.location.reload()
+    // window.location.reload()
+    clutter()
   } catch (e) {
     // console.log(e)
   }
